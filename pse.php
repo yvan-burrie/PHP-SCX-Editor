@@ -18,7 +18,7 @@ interface Scenario
 	/**
 	 * @return string
 	 */
-	public function getSignature();
+	public function getSignature(): string;
 
 	/**
 	 * @param string $signature
@@ -28,7 +28,7 @@ interface Scenario
 	/**
 	 * @return int
 	 */
-	public function getSavable();
+	public function getSavable(): int;
 
 	/**
 	 * @param int $savable
@@ -38,7 +38,7 @@ interface Scenario
 	/**
 	 * @return int
 	 */
-	public function getTimeStamp();
+	public function getTimeStamp(): int;
 
 	/**
 	 * @param int $timeStamp
@@ -48,7 +48,7 @@ interface Scenario
 	/**
 	 * @return int
 	 */
-	public function getDlcOptions();
+	public function getDlcOptions(): int;
 
 	/**
 	 * @param int $dlcOptions
@@ -58,7 +58,7 @@ interface Scenario
 	/**
 	 * @return string
 	 */
-	public function getDescription();
+	public function getDescription(): string;
 
 	/**
 	 * @param string $text
@@ -68,7 +68,7 @@ interface Scenario
 	/**
 	 * @return int
 	 */
-	public function getIndividualizedVictory();
+	public function getIndividualizedVictory(): int;
 
 	/**
 	 * @param int $num
@@ -78,7 +78,7 @@ interface Scenario
 	/**
 	 * @return int
 	 */
-	public function getTotalActivePlayers();
+	public function getTotalActivePlayers(): int;
 
 	/**
 	 * @param int $totalActivePlayers
@@ -88,7 +88,7 @@ interface Scenario
 	/**
 	 * @return int
 	 */
-	public function getNextSpawnId();
+	public function getNextSpawnId(): int;
 
 	/**
 	 * @param int $spawnId
@@ -98,7 +98,7 @@ interface Scenario
 	/**
 	 * @return float
 	 */
-	public function getVersion();
+	public function getVersion(): float;
 
 	/**
 	 * @param float $version
@@ -108,7 +108,7 @@ interface Scenario
 	/**
 	 * @return int
 	 */
-	public function getConquest();
+	public function getConquest(): int;
 
 	/**
 	 * @param int $conquest
@@ -123,7 +123,7 @@ interface Scenario
 	/**
 	 * @return string
 	 */
-	public function getOriginalFileName();
+	public function getOriginalFileName(): string;
 
 	/**
 	 * @param string $fileName
@@ -136,15 +136,15 @@ interface Scenario
 	const PLAYERS_MAX = 9;
 
 	/**
+	 * @return Map
+	 */
+	public function getMap(): Map;
+
+	/**
 	 * @param int $playerId
 	 * @return Player
 	 */
 	public function getPlayer(int $playerId): Player;
-
-	/**
-	 * @return Map
-	 */
-	public function getMap(): Map;
 
 	/**
 	 * @return Triggers
@@ -160,22 +160,22 @@ interface TimeLine
 	/**
 	 * @return int
 	 */
-	public function getAvailableId();
+	public function getAvailableId(): int;
 
 	/**
 	 * @param int $availableId
 	 */
-	public function setAvailableId(int $availableId = 0);
+	public function setAvailableId(int $availableId);
 
 	/**
 	 * @return float
 	 */
-	public function getOldTime();
+	public function getOldTime(): float;
 
 	/**
 	 * @param float $oldTime
 	 */
-	public function setOldTime(float $oldTime = -1.0);
+	public function setOldTime(float $oldTime);
 
 	/**
 	 *
@@ -200,7 +200,7 @@ interface TimeLine
 	/**
 	 * @return int
 	 */
-	public function numEntries();
+	public function numEntries(): int;
 
 	/**
 	 * @param int $entryId
@@ -228,7 +228,7 @@ interface TimeEntry
 	/**
 	 * @return float
 	 */
-	public function getTime();
+	public function getTime(): float;
 
 	/**
 	 * @param float $time
@@ -263,7 +263,7 @@ interface MapTile
 	/**
 	 * @return int
 	 */
-	public function getTerrainId();
+	public function getTerrainId(): int;
 
 	/**
 	 * @param int $terrainId
@@ -273,7 +273,7 @@ interface MapTile
 	/**
 	 * @return int
 	 */
-	public function getOverlayId();
+	public function getOverlayId(): int;
 
 	/**
 	 * @param int $overlayId
@@ -283,7 +283,7 @@ interface MapTile
 	/**
 	 * @return int
 	 */
-	public function getElevation();
+	public function getElevation(): int;
 
 	/**
 	 * @param int $elevation
@@ -299,12 +299,12 @@ interface Player
 	/**
 	 * @return Scenario
 	 */
-	public function getScenario();
+	public function getScenario(): Scenario;
 
 	/**
 	 * @return int
 	 */
-	public function getType();
+	public function getType(): int;
 
 	/**
 	 * @param int $type
@@ -314,7 +314,7 @@ interface Player
 	/**
 	 * @return int
 	 */
-	public function getCivilizationId();
+	public function getCivilizationId(): int;
 
 	/**
 	 * @param int $civilizationId
@@ -324,7 +324,7 @@ interface Player
 	/**
 	 * @return string
 	 */
-	public function getName();
+	public function getName(): string;
 
 	/**
 	 * @param string $name
@@ -334,7 +334,7 @@ interface Player
 	/**
 	 * @return int
 	 */
-	public function getFood();
+	public function getFood(): int;
 
 	/**
 	 * @param int $food
@@ -344,7 +344,7 @@ interface Player
 	/**
 	 * @return int
 	 */
-	public function getWood();
+	public function getWood(): int;
 
 	/**
 	 * @param int $wood
@@ -354,7 +354,7 @@ interface Player
 	/**
 	 * @return int
 	 */
-	public function getGold();
+	public function getGold(): int;
 
 	/**
 	 * @param int $gold
@@ -364,7 +364,7 @@ interface Player
 	/**
 	 * @return int
 	 */
-	public function getStone();
+	public function getStone(): int;
 
 	/**
 	 * @param int $stone
@@ -374,7 +374,7 @@ interface Player
 	/**
 	 * @return int
 	 */
-	public function getIron();
+	public function getIron(): int;
 
 	/**
 	 * @param int $iron
@@ -384,7 +384,7 @@ interface Player
 	/**
 	 * @return int
 	 */
-	public function getGoods();
+	public function getGoods(): int;
 
 	/**
 	 * @param int $goods
@@ -394,7 +394,7 @@ interface Player
 	/**
 	 * @return int
 	 */
-	public function getPopulation();
+	public function getPopulation(): int;
 
 	/**
 	 * @param int $population
@@ -435,29 +435,29 @@ interface Triggers
 	/**
 	 * @return int
 	 */
-	public function getObjectivesStart();
+	public function getObjectivesStart(): int;
 
 	/**
 	 * @param int $objectivesStart
 	 */
-	public function setObjectivesStart(int $objectivesStart = 0);
+	public function setObjectivesStart(int $objectivesStart);
 
 	/**
 	 * @return int
 	 */
-	public function numTriggers();
+	public function numTriggers(): int;
 
 	/**
 	 * @param int $triggerId
 	 * @return Trigger
 	 */
-	public function getTrigger(int $triggerId);
+	public function getTrigger(int $triggerId): Trigger;
 
 	/**
 	 * @param string $triggerName
 	 * @return Trigger|null
 	 */
-	public function getTriggerByName(string $triggerName);
+	public function getTriggerByName(string $triggerName): Trigger;
 
 	/**
 	 * @param int $triggerId
@@ -470,7 +470,7 @@ interface Triggers
 	 * @param int|null $state
 	 * @return Trigger
 	 */
-	public function newTrigger(string $name = NULL, int $state = NULL);
+	public function newTrigger(string $name = NULL, int $state = NULL): Trigger;
 }
 
 /**
@@ -481,7 +481,7 @@ interface Trigger
 	/**
 	 * @return string
 	 */
-	public function getName();
+	public function getName(): string;
 
 	/**
 	 * @param string $triggerName
@@ -511,7 +511,7 @@ interface Trigger
 	/**
 	 * @return int
 	 */
-	public function getState();
+	public function getState(): int;
 
 	/**
 	 * @param int $state
@@ -521,13 +521,13 @@ interface Trigger
 	/**
 	 * @return int
 	 */
-	public function numEffects();
+	public function numEffects(): int;
 
 	/**
 	 * @param int $entryId
 	 * @return TriggerEffect
 	 */
-	public function getEffect(int $entryId);
+	public function getEffect(int $entryId): TriggerEffect;
 
 	/**
 	 * @param int $entryId
@@ -538,18 +538,18 @@ interface Trigger
 	/**
 	 * @return TriggerEffect
 	 */
-	public function newEffect();
+	public function newEffect(): TriggerEffect;
 
 	/**
 	 * @return int
 	 */
-	public function numConditions();
+	public function numConditions(): int;
 
 	/**
 	 * @param int $entryId
 	 * @return TriggerCondition
 	 */
-	public function getCondition(int $entryId);
+	public function getCondition(int $entryId): TriggerCondition;
 
 	/**
 	 * @param int $entryId
@@ -560,7 +560,7 @@ interface Trigger
 	/**
 	 * @return TriggerCondition
 	 */
-	public function newCondition();
+	public function newCondition(): TriggerCondition;
 }
 
 /**
@@ -571,7 +571,7 @@ interface TriggerEntry
 	/**
 	 * @return int
 	 */
-	public function getType();
+	public function getType(): int;
 
 	/**
 	 * @param int $type
@@ -587,7 +587,7 @@ interface TriggerEffect extends TriggerEntry
 	/**
 	 * @return string
 	 */
-	public function getText();
+	public function getText(): string;
 
 	/**
 	 * @param string $text
@@ -597,7 +597,7 @@ interface TriggerEffect extends TriggerEntry
 	/**
 	 * @return string
 	 */
-	public function getSound();
+	public function getSound(): string;
 
 	/**
 	 * @param string $sound
@@ -607,13 +607,13 @@ interface TriggerEffect extends TriggerEntry
 	/**
 	 * @return int
 	 */
-	public function numSpawnIds();
+	public function numSpawnIds(): int;
 
 	/**
 	 * @param int $spawnIdsOffset
 	 * @return int
 	 */
-	public function getSpawnId(int $spawnIdsOffset);
+	public function getSpawnId(int $spawnIdsOffset): int;
 
 	/**
 	 * @param int|null $spawnIdsOffset
